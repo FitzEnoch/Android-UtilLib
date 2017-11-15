@@ -1,10 +1,16 @@
 ﻿## AndroidKit
 
+Android 安卓工具库
 Android 开发工具库 API文档 说明
 
-library 使用方式
+------------
 
-在项目配置文件中引用：compile 'vip.devkit:android-kit:1.0.3'
+library 使用方式
+```
+在项目配置文件中引用：compile 'vip.devkit:android-kit:1.0.0'
+```
+
+
 
 library 说明
   Library 是常用工具类集成
