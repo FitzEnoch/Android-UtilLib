@@ -1,4 +1,4 @@
-package vip.devkit.library;
+package vip.devkit.library.bitmap;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;

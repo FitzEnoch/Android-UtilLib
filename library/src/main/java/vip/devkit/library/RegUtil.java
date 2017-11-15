@@ -117,7 +117,7 @@ public class RegUtil {
      * @return 验证成功返回true，验证失败返回false
      */
     public static boolean checkURL(String url) {
-        String regex = "(https?://(w{3}\\.)?)?\\w+\\.\\w+(\\.[a-zA-Z]+)*(:\\d{1,5})?(/\\w*)*(\\??(.+=.*)?(&.+=.*)?)?";
+        String regex = "(http|https?://(w{3}\\.)?)?\\w+\\.\\w+(\\.[a-zA-Z]+)*(:\\d{1,5})?(/\\w*)*(\\??(.+=.*)?(&.+=.*)?)?";
         return Pattern.matches(regex, url);
     }
 

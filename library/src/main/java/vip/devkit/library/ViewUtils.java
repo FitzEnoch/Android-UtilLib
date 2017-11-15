@@ -17,7 +17,6 @@ import android.view.ViewParent;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import cn.k_tools.utilslibrary.R;
 
 
 /**

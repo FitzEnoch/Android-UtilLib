@@ -1,4 +1,4 @@
-package vip.devkit.library;
+package vip.devkit.library.bitmap;
 
 
 import android.annotation.TargetApi;
@@ -39,6 +39,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+
+import vip.devkit.library.CloseUtils;
+import vip.devkit.library.FileUtils;
+import vip.devkit.library.Utils;
 
 /**
  * 作者 by K

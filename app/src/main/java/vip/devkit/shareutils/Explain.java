@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import java.util.Date;
 
-import cn.k_tools.shareutils.R;
 import vip.devkit.library.DESUtil;
 import vip.devkit.library.DateUtil;
 import vip.devkit.library.Logcat;
@@ -26,7 +25,6 @@ import vip.devkit.library.Logcat;
  * <p/>
  * License
  * <p/>
- * Copyright (C)  2016 android@19code.com
  * <p/>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

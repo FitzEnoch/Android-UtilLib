@@ -1,4 +1,4 @@
-package vip.devkit.library;
+package vip.devkit.library.encrypt;
 
 import android.util.Base64;
 
@@ -14,6 +14,8 @@ import java.security.SecureRandom;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+
+import vip.devkit.library.CloseUtils;
 
 /**
  * 作者 by K

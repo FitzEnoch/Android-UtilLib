@@ -5,7 +5,7 @@ publish {
     userOrg = 'yingzi'      //bintray注册的用户名
     groupId = 'vip.devkit'         //compile引用时的第1部分groupId
     artifactId = 'android-kit'     //compile引用时的第2部分项目名
-    publishVersion = '1.0.1'    //compile引用时的第3部分版本号
+    publishVersion = '1.0.3'    //compile引用时的第3部分版本号
     desc = 'This is a androud-utils extend library'
     website = 'https://github.com/yingzikeji/AndroidUtils'
     /*
@@ -39,8 +39,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.1'
-    compile files('libs/cpdetector.jar')
-    compile files('libs/chardet-1.0.jar')
-    compile files('libs/pinyin4j-2.5.0.jar')
-    compile files('libs/commons-codec-1.10.jar')
+    compile 'com.google.code.gson:gson:2+'
 }

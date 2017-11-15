@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
 
-
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -20,7 +19,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.RandomAccessFile;
 import java.net.FileNameMap;
-import java.net.MalformedURLException;
 import java.net.URLConnection;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
@@ -28,7 +26,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import vip.devkit.library.RelyUtil.FileImpl;
 import vip.devkit.library.RelyUtil.FileTypeImpl;
 import vip.devkit.library.RelyUtil.IOUtil;
 import vip.devkit.library.RelyUtil.ValidUtil;
@@ -388,35 +385,6 @@ public class FileUtils {
         return false;
     }
 
-    /**
-     * 获取文件的编码(cpDetector)探测
-     *
-     * @param file
-     * @return
-     */
-    public static String cpdetector(File file) {
-        try {
-            return FileImpl.cpdetector(file.toURL());
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
-     * 利用简单的文件头字节特征探测文件编码
-     *
-     * @param file
-     * @return UTF-8 Unicode UTF-16BE GBK
-     */
-    public static String SimpleEncoding(String file) {
-        try {
-            return FileImpl.SimpleEncoding(file);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
     /**
      * 创建多级目录
