@@ -1,8 +1,8 @@
 ﻿## AndroidKit
 # AndroidUtils
-[![](https://jitpack.io/v/yingzikeji/AndroidUtils.svg)](https://jitpack.io/#yingzikeji/AndroidUtils)
+[ ![Download](https://api.bintray.com/packages/yingzi/maven/android-util/images/download.svg) ](https://bintray.com/yingzi/maven/android-util/_latestVersion)
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-<a href='https://bintray.com/yingzi/maven/androud-utils?source=watch' alt='Get automatic notifications about new "androud-utils" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
+
 
 Android 安卓工具库
 Android 开发工具库 API文档 说明
