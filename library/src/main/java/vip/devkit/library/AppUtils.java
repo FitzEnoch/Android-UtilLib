@@ -1,14 +1,18 @@
 package vip.devkit.library;
 
+import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -19,6 +23,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.Locale;
 import java.util.regex.Pattern;
 
 /**
@@ -32,6 +37,7 @@ import java.util.regex.Pattern;
 public class AppUtils {
     /**
      * 获取应用名字
+     *
      * @param context
      * @param packageName
      * @return
@@ -51,6 +57,7 @@ public class AppUtils {
 
     /**
      * 获取应用图标
+     *
      * @param context
      * @param packageName
      * @return
@@ -70,6 +77,7 @@ public class AppUtils {
 
     /**
      * 获取应用更新日期
+     *
      * @param context
      * @param packageName
      * @return
@@ -88,6 +96,7 @@ public class AppUtils {
 
     /**
      * 获取App大小
+     *
      * @param context
      * @param packageName
      * @return
@@ -105,6 +114,7 @@ public class AppUtils {
 
     /**
      * 获取应用Apk文件
+     *
      * @param context
      * @param packageName
      * @return
@@ -122,6 +132,7 @@ public class AppUtils {
 
     /**
      * 获取应用版本名称
+     *
      * @param context
      * @param packageName
      * @return
@@ -139,6 +150,7 @@ public class AppUtils {
 
     /**
      * 获取应用版本号
+     *
      * @param context
      * @param packageName
      * @return
@@ -156,6 +168,7 @@ public class AppUtils {
 
     /**
      * 获取应用的安装市场
+     *
      * @param context
      * @param packageName
      * @return
@@ -166,6 +179,7 @@ public class AppUtils {
 
     /**
      * 获取包名
+     *
      * @param context
      * @return
      */
@@ -175,6 +189,7 @@ public class AppUtils {
 
     /**
      * 是否有权限
+     *
      * @param context
      * @param permission
      * @return
@@ -200,6 +215,7 @@ public class AppUtils {
 
     /**
      * 是否安装应用
+     *
      * @param context
      * @param packageName
      * @return
@@ -223,6 +239,7 @@ public class AppUtils {
 
     /**
      * 安装应用
+     *
      * @param context
      * @param filePath
      * @return
@@ -241,6 +258,7 @@ public class AppUtils {
 
     /**
      * 卸载应用
+     *
      * @param context
      * @param packageName
      * @return
@@ -258,6 +276,7 @@ public class AppUtils {
 
     /**
      * 是否系统应用
+     *
      * @param context
      * @param packageName
      * @return
@@ -280,6 +299,7 @@ public class AppUtils {
     /**
      * 服务是否在运行
      * className "com.xxx.xx..XXXService"
+     *
      * @param context
      * @param className
      * @return
@@ -297,8 +317,8 @@ public class AppUtils {
     }
 
     /**
+     * 停止服务
      *
-     *  停止服务
      * @param context
      * @param className
      * @return
@@ -319,6 +339,7 @@ public class AppUtils {
 
     /**
      * 获取Cpu 内核数
+     *
      * @return
      */
     public static int getNumCores() {
@@ -341,13 +362,14 @@ public class AppUtils {
 
     /**
      * 结束进程
+     *
      * @param context
      * @param pid
      * @param processName
      */
     public static void killProcesses(Context context, int pid, String processName) {
         ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        String packageName ;
+        String packageName;
         try {
             if (!processName.contains(":")) {
                 packageName = processName;
@@ -365,6 +387,7 @@ public class AppUtils {
 
     /**
      * 运行脚本
+     *
      * @param script
      * @return
      */
@@ -402,7 +425,7 @@ public class AppUtils {
                     BufferedReader bufferedReader = new BufferedReader(
                             new InputStreamReader(m_process.getErrorStream()),
                             8192);
-                    String ls_1 ;
+                    String ls_1;
                     try {
                         while ((ls_1 = bufferedReader.readLine()) != null) {
                             sberr.append(ls_1).append("\n");
@@ -437,7 +460,8 @@ public class AppUtils {
     }
 
     /**
-     *  是否有Root 权限
+     * 是否有Root 权限
+     *
      * @param context
      * @return
      */
@@ -466,5 +490,36 @@ public class AppUtils {
             }
         }
         return true;
+    }
+
+
+    /**
+     * 中英文切换
+     * 设置当前语言
+     *
+     * @param context
+     * @param language  ch 中文/ en 英文
+     * @param mActivity 当前activity
+     */
+    private void setLanguage(Context context, String language, Activity mActivity) {
+        //获取当前资源对象
+        Resources resources = context.getResources();
+        //获取设置对象
+        Configuration configuration = resources.getConfiguration();
+        //获取屏幕参数
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+        //设置本地语言
+        switch (language) {
+            case "ch":
+                configuration.locale = Locale.CHINA;
+                break;
+            case "en":
+                configuration.locale = Locale.ENGLISH;
+                break;
+        }
+        resources.updateConfiguration(configuration, displayMetrics);
+        //发送结束所有activity的广播
+        mActivity.recreate();
+        // context.startActivity(new Intent(context, startActivity.getClass()));
     }
 }

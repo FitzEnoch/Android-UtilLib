@@ -1,6 +1,7 @@
 package vip.devkit.library;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.KeyguardManager;
@@ -80,7 +81,7 @@ public class SystemUtils {
         PackageManager pm = mContext.getPackageManager();
         Intent intent = new Intent("android.intent.action.BOOT_COMPLETED");
         //获得
-        List<ResolveInfo> infos = pm.queryBroadcastReceivers(intent, PackageManager.GET_INTENT_FILTERS);
+        @SuppressLint("WrongConstant") List<ResolveInfo> infos = pm.queryBroadcastReceivers(intent, PackageManager.GET_INTENT_FILTERS);
         for (ResolveInfo info : infos) {
             String receivername = info.activityInfo.name;//获得广播接收者的名字
             String packname = info.activityInfo.packageName;//包名
