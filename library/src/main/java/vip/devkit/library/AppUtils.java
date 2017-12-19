@@ -501,7 +501,7 @@ public class AppUtils {
      * @param language  ch 中文/ en 英文
      * @param mActivity 当前activity
      */
-    private void setLanguage(Context context, String language, Activity mActivity) {
+    public void setLanguage(Context context, String language, Activity mActivity) {
         //获取当前资源对象
         Resources resources = context.getResources();
         //获取设置对象
