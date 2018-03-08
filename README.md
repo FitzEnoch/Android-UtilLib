@@ -11,7 +11,8 @@ Android 开发工具库 API文档 说明
 
 library 使用方式
 ```
-在项目配置文件中引用：compile 'vip.devkit:android-kit:1.0.0'
+在项目配置文件中引用：compile 'vip.devkit:android-util:1.0.5'
+
 ```
 
 
