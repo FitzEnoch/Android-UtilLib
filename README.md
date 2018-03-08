@@ -35,4 +35,5 @@ library 说明
   AppUtils.getAppName(MainActivity.this,vip.devkit.library);
 
   library Bintray
-  <p><a href="https://bintray.com/yingzi/maven/android-util?source=watch" target="_blank"><img src="./library/bintray_badge_color.png" alt="Bintray"></a></p>
+<a href='https://bintray.com/yingzi/maven/common.share?source=watch' alt='Get automatic notifications about new "common.share" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
+
