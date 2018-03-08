@@ -12,11 +12,10 @@ Android 开发工具库 API文档 说明
 library 使用方式
 ```
 在项目配置文件中引用：compile 'vip.devkit:android-util:1.0.5'
-
 ```
 
 
-
+````
 library 说明
   Library 是常用工具类集成
   每一个Android开发者在日常开发中都会积累一些自己的代码片段
@@ -27,7 +26,7 @@ library 说明
   4.尽量少依赖第三方
   5.便捷开发
 
-
+````
   library 中的方法调用
 
   调用方法如此简单：
@@ -35,5 +34,6 @@ library 说明
   AppUtils.getAppName(MainActivity.this,vip.devkit.library);
 
   library Bintray
+  
 <a href='https://bintray.com/yingzi/maven/common.share?source=watch' alt='Get automatic notifications about new "common.share" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
 
