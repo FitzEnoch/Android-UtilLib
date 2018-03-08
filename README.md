@@ -32,7 +32,7 @@ library 说明
   调用方法如此简单：
   调用结果 = 类名.方法名( 参数 )
   ````
-  AppUtils.getAppName(MainActivity.this,vip.devkit.library);
+ String AppName =  AppUtils.getAppName(MainActivity.this,vip.devkit.library);
   ````
   library Bintray
   
